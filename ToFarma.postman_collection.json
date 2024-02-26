@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "804699d8-41db-4210-a320-684062275d28",
+		"name": "ToFarma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "773430"
+	},
+	"item": [
+		{
+			"name": "GetAccessToken",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "villalobos_055@hotmail.com",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "WTz0Z7oBCRjSQXjHpKVVcEXAwUHdbAZJvHRRpATg",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "*",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://admin.tofarma.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiN2ZhMzliYWQ3YWU5MzZhMzdlYzI2ZWUwYWFkM2VmM2M0NDA0ZmU4YzgzY2JhNWE2MDNmMjRiMjUxMGRjZDQ1OWIxYzJiMmZiM2U1OGRlYjMiLCJpYXQiOjE2ODEyNDgzOTQsIm5iZiI6MTY4MTI0ODM5NCwiZXhwIjoxNzEyODcwNzk0LCJzdWIiOiI4Iiwic2NvcGVzIjpbIioiXX0.c569ReceAJYAxu_BLXYDM2j8NmLqo91p4mR8nfaGru0A2P9tk6ROuKlpyCMxnha12faa5yA_LIhLVsy246neqSEM6Si4ETNIPT79PB8v1tvvZgYM2td2xGNeBr-W6urcVFHy8fIGCrD4WO8_riyb82iqysVLO6tXk4k2W76LoRQ8hbiYPQtnoq46ll2xLwRn6NTNNIPtWZs9phK8OgFTpNMlAwZn-OThXqGMEZ5oKEXE-do4JZqWFvjjUEYDdkKLcGbNoZJ8OgEM4rlopSh9dbCLNiNT845BlFjaK4-4rV30cSK4ri2qSXTmM8r2LXnI9WYtovcqx2mEbPMJGBT-AQmrQgD2kdrb559GRTu_WaD-PRiqEPvUj2Y-hgEBfXdqzhASCs4jES34kpdTSKbKU2ch5A4anoZcIewd-N0C1FWfzPN2fUGoAhzQybc7qcZCP79vDtHx3T69dtQ2qhrur4X0zUQNDhyB7mqJ4hNzCgu1OYmdIRFamSneg6yjDR-wd9PzTPb80qhTRrEGvcTe22PFz9qVgwGlmSv0-hIn0CYrGWjOG3jpxHa2XSYlz8HIPDXSZYlWPlj5E4M--lwiMv1EzyHrvmerHs6R8r4sqJE6-nI7raKd00TeKVH3_hTZ3zIWopPZWrrbndHpVN7ED2bWYLV09n2DXHFcvnYzU3M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://admin.tofarma.com/api/user",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTodayMedication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://admin.tofarma.com/api/patient/todayMedication",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"api",
+						"patient",
+						"todayMedication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNext-visit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://admin.tofarma.com/api/patient/next-visit",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"api",
+						"patient",
+						"next-visit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMessages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://admin.tofarma.com/api/patient/messages",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"api",
+						"patient",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app.tofarma.com/chat",
+					"protocol": "https",
+					"host": [
+						"app",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"address\": \"\",\n  \"birthDate\": \"1899/12/31\",\n  \"email\": \"villalobos_058@hotmail.com\",\n  \"identification\": \"\",\n  \"name\": \"ddddd\",\n  \"password\": \"1234\",\n  \"phone\": \"11111111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://admin.tofarma.com/api/patient/register",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"api",
+						"patient",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://admin.tofarma.com/api/post",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"tofarma",
+						"com"
+					],
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
